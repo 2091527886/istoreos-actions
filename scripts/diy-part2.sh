@@ -17,7 +17,7 @@
 #sed -i 's/255.255.255.0/255.255.0.0/g' package/base-files/files/bin/config_generate
 
 # 修改主机名字，把 iStore OS 修改你喜欢的就行（不能纯数字或者使用中文）
-# sed -i 's/OpenWrt/iStore OS/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/lol/g' package/base-files/files/bin/config_generate
 
 # ttyd自动登录
 # sed -i "s?/bin/login?/usr/libexec/login.sh?g" ${GITHUB_WORKSPACE}/openwrt/package/feeds/packages/ttyd/files/ttyd.config
@@ -211,7 +211,7 @@ mkdir luci-app-adguardhome
 cp -rf ../../kiddin9/luci-app-adguardhome/* luci-app-adguardhome
 cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-adguardhome/* luci-app-adguardhome
 sed -i 's/拦截DNS服务器/拦截DNS服务器（默认用户名和密码均为root）/' luci-app-adguardhome/po/zh_Hans/adguardhome.po
-#sed -i 's/+PACKAGE_$(PKG_NAME)_INCLUDE_binary:adguardhome//' luci-app-adguardhome/Makefile
+sed -i 's/+PACKAGE_$(PKG_NAME)_INCLUDE_binary:adguardhome//' luci-app-adguardhome/Makefile
 #ADGuardHome（kenzok8）
 # svn export https://github.com/kenzok8/openwrt-packages/trunk/adguardhome
 # svn export https://github.com/kenzok8/openwrt-packages/trunk/luci-app-adguardhome
@@ -262,19 +262,19 @@ sed -i 's/拦截DNS服务器/拦截DNS服务器（默认用户名和密码均为
 
 # 5G通信模组拨号工具
 mkdir quectel_QMI_WWAN
-# mkdir fibocom_QMI_WWAN
-# mkdir meig_QMI_WWAN
-# mkdir tw_QMI_WWAN
+mkdir fibocom_QMI_WWAN
+mkdir meig_QMI_WWAN
+mkdir tw_QMI_WWAN
 mkdir quectel_cm_5G
 mkdir quectel_MHI
-# mkdir luci-app-hypermodem
+mkdir luci-app-hypermodem
 cp -rf ../../Modem-Support/quectel_QMI_WWAN/* quectel_QMI_WWAN
-# cp -rf ../../Modem-Support/fibocom_QMI_WWAN/* fibocom_QMI_WWAN
-# cp -rf ../../Modem-Support/meig_QMI_WWAN/* meig_QMI_WWAN
-# cp -rf ../../Modem-Support/tw_QMI_WWAN/* tw_QMI_WWAN
+cp -rf ../../Modem-Support/fibocom_QMI_WWAN/* fibocom_QMI_WWAN
+cp -rf ../../Modem-Support/meig_QMI_WWAN/* meig_QMI_WWAN
+cp -rf ../../Modem-Support/tw_QMI_WWAN/* tw_QMI_WWAN
 cp -rf ../../Modem-Support/quectel_cm_5G/* quectel_cm_5G
 cp -rf ../../Modem-Support/quectel_MHI/* quectel_MHI
-# cp -rf ../../Modem-Support/luci-app-hypermodem/* luci-app-hypermodem
+cp -rf ../../Modem-Support/luci-app-hypermodem/* luci-app-hypermodem
 
 # 5G模组短信插件
 # cp -rf temp/luci-app-sms-tool/* luci-app-sms-tool
@@ -285,9 +285,9 @@ cp -rf ../../Modem-Support/luci-app-sms-tool/* luci-app-sms-tool
 cp -rf ../../MyConfig/configs/istoreos/general/applications/luci-app-sms-tool/* luci-app-sms-tool
 
 # 5G模组信息插件
-# svn export https://github.com/qiuweichao/luci-app-modem-info/trunk/luci-app-3ginfo-lite
-# svn export https://github.com/owner888/luci-app-3ginfo-zh_cn/trunk/3ginfo
-# svn export https://github.com/owner888/luci-app-3ginfo-zh_cn/trunk/luci-app-3ginfo
+svn export https://github.com/qiuweichao/luci-app-modem-info/trunk/luci-app-3ginfo-lite
+svn export https://github.com/owner888/luci-app-3ginfo-zh_cn/trunk/3ginfo
+svn export https://github.com/owner888/luci-app-3ginfo-zh_cn/trunk/luci-app-3ginfo
 
 # 5G模组IPv6
 mkdir ndisc
