@@ -1,5 +1,5 @@
 name: Build iStore OS 24.10
-
+runs-on: [self-hosted, linux, ARM64]
 on:
   repository_dispatch:
   workflow_dispatch:
