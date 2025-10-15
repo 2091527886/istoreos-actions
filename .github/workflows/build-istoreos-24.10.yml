@@ -25,7 +25,6 @@ on:
 
 env:
   REPO_URL: https://github.com/istoreos/istoreos
-  runs-on: [self-hosted, linux]
 
   # REPO_BRANCH: main
   FEEDS_CONF: feeds.conf
@@ -41,7 +40,7 @@ env:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
+    runs-on: [self-hosted, linux]
     strategy:
       matrix:
         REPO_BRANCH:
