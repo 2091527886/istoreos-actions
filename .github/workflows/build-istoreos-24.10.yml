@@ -1,5 +1,4 @@
 name: Build iStore OS 24.10
-runs-on: [self-hosted, linux, ARM64]
 on:
   repository_dispatch:
   workflow_dispatch:
@@ -26,6 +25,8 @@ on:
 
 env:
   REPO_URL: https://github.com/istoreos/istoreos
+  runs-on: [self-hosted, linux]
+
   # REPO_BRANCH: main
   FEEDS_CONF: feeds.conf
   CONFIG_FILE: .config
